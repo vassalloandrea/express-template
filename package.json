@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Express application template",
   "main": "index.js",
+  "engines": {
+    "node": "14.7.0"
+  },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +29,9 @@
   },
   "homepage": "https://github.com/vassalloandrea/express-template#readme",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
