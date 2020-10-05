@@ -10,3 +10,8 @@ npm-debug.log*
 
 # Dependency directory
 node_modules
+
+# Dotenv
+.env
+.env.development
+.env.test
