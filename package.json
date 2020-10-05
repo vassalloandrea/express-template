@@ -4,6 +4,7 @@
   "description": "Express application template",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/vassalloandrea/express-template/issues"
   },
-  "homepage": "https://github.com/vassalloandrea/express-template#readme"
+  "homepage": "https://github.com/vassalloandrea/express-template#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
