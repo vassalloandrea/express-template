@@ -1,0 +1,12 @@
+# MacOs
+.DS_Store
+.Trashes
+*.swp
+
+# Node
+logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+node_modules
