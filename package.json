@@ -4,7 +4,7 @@
   "description": "Express application template",
   "main": "index.js",
   "engines": {
-    "node": "14.7.0"
+    "node": "12.x"
   },
   "scripts": {
     "start": "nodemon",
