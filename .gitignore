@@ -8,6 +8,9 @@ logs
 *.log
 npm-debug.log*
 
+# Deploy
+.build
+
 # Dependency directory
 node_modules
 
