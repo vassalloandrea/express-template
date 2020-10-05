@@ -1,0 +1,27 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "Express application template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vassalloandrea/express-template.git"
+  },
+  "keywords": [
+    "express",
+    "graphql",
+    "jest",
+    "cypress",
+    "typescript",
+    "eslint"
+  ],
+  "author": "Andrea Vassallo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vassalloandrea/express-template/issues"
+  },
+  "homepage": "https://github.com/vassalloandrea/express-template#readme"
+}
