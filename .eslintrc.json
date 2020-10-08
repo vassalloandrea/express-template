@@ -14,7 +14,8 @@
   },
   "plugins": [
     "prettier",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier/@typescript-eslint"
   ],
   "rules": {
     "prettier/prettier": "error"
