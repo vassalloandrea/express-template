@@ -5,7 +5,7 @@ import './config'
 
 import { port } from './config/envs'
 
-const app = express()
+export const app = express()
 
 app.get('/', (req, res) => {
   res.send('Welcome to express')
