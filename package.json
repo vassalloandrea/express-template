@@ -9,11 +9,11 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "start": "node .build/app.js",
+    "start": "node .build/server.js",
     "build": "babel src -d .build --extensions \".ts\" && tsc",
     "eslint": "eslint --ignore-path .gitignore --ext .ts",
     "eslint:fix": "npm run eslint -- --fix",
-    "jest": "jest"
+    "jest": "NODE_ENV=test jest --runInBand"
   },
   "repository": {
     "type": "git",

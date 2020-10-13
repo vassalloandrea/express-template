@@ -1,19 +1,17 @@
-import request from 'supertest';
-import { app } from './app';
+import request from 'supertest'
 
-let res: any;
+import app from './app'
 
 describe('GET /', () => {
-  beforeEach( async() => {
-    res = await request(app).get('/').send()
+  it('returns 200 ok', (done) => {
+    request(app)
+      .get('/')
+      .expect(200, done)
   })
 
-  it('should send status 200', () => {
-    expect(res.status).toEqual(200)
-  })
-
-  it('should send Welcome to express', () => {
-    expect(res.text).toBe('Welcome to express')
+  it('returns Welcome to express', (done) => {
+    request(app)
+      .get('/')
+      .expect('Welcome to express', done)
   })
 })
-

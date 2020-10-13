@@ -7,5 +7,5 @@
   "ignore": [
     "src/**/*.spec.ts"
   ],
-  "exec": "babel-node src/app.ts --extensions \".ts\""
+  "exec": "babel-node src/server.ts --extensions \".ts\""
 }
