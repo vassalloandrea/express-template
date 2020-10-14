@@ -1,0 +1,86 @@
+name: Test
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  deps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+          check-latest: true
+
+      - name: Save cache
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+  test:
+    needs: deps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+          check-latest: true
+
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Run unit tests
+        run: npm run jest
+
+  eslint:
+    needs: deps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+          check-latest: true
+
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Run eslint
+        run: npm run eslint
