@@ -1,10 +1,10 @@
 import express from 'express'
 
-const create = async (req: express.Request, res: express.Response) => {
-  res.send({
-    _id: 1,
-    name: 'Andrea',
-  })
+import { userService } from '../../services'
+
+const create = async (request: express.Request, response: express.Response) => {
+  const user = await userService.createUser(request)
+  response.send(user)
 }
 
 export default create
