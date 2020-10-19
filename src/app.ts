@@ -1,7 +1,6 @@
 import express from 'express'
 
-// Load the project vendors dependecies
-import './config'
+require('./config')
 
 const app = express()
 

@@ -4,6 +4,8 @@
     "isolatedModules": true,
     "strict": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts"]
 }

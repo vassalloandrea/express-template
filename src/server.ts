@@ -1,7 +1,9 @@
 import app from './app'
+import databaseConnection from './config/databaseConnection'
+import { appUrl, port } from './config/dotenv'
 
-import { port } from './config/envs'
-
-app.listen(port, () => {
-  console.log(`App is listening to port ${port}`)
+databaseConnection.create().then(() => {
+  app.listen(port, () => {
+    console.log(`The server is up and running here: http://${appUrl}:${port}`)
+  })
 })
