@@ -1,7 +1,9 @@
-# ExpressJS template
+# ExpressJS API template
 
-This is the template that I usually use to create a new ExpressJS project.
+This is the template that I usually use to create a new ExpressJS API project.
 Feel free to contribute opening issue and/or making PRs :heart:
+
+I added both the GraphQL and REST paradigms.
 
 ## Main technologies
 

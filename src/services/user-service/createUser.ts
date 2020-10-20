@@ -1,16 +1,10 @@
-import express from 'express'
-import { getMongoManager } from 'typeorm'
+import { CreateUserInput } from '../../inputs'
+import { User } from '../../models/user'
 
-import { User } from '../../entities/user'
-
-const CreateUser = async (request: express.Request) =>
+const CreateUser = async (data: CreateUserInput) =>
   new Promise((resolve) => {
-    const user = new User()
-    user.name = request.body.name
-
-    getMongoManager()
-      .save(user)
-      .then(() => resolve(user))
+    const user = User.create(data)
+    user.save().then(() => resolve(user))
   })
 
 export default CreateUser
