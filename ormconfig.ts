@@ -19,5 +19,5 @@ module.exports = {
   synchronize: false,
   logging: isDevelopment,
   useUnifiedTopology: true,
-  entities: ['./src/entities/**/*.ts'],
+  entities: ['./src/models/**/*.ts'],
 }

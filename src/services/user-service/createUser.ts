@@ -1,7 +1,7 @@
 import express from 'express'
 import { getMongoManager } from 'typeorm'
 
-import { User } from '../../entities/user'
+import { User } from '../../models/user'
 
 const CreateUser = async (request: express.Request) =>
   new Promise((resolve) => {
