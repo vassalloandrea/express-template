@@ -44,6 +44,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
     "nodemailer": "^6.4.14",
+    "nodemailer-express-handlebars": "^4.0.0",
     "type-graphql": "^1.1.0",
     "typeorm": "^0.2.28"
   },
