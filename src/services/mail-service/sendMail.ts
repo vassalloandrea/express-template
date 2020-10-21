@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer'
-import appRoot from 'app-root-path'
-import { fromEmail, mailer } from '../../config/dotenv'
+import { fromEmail, handleBarsConfig, mailer } from '../../config/dotenv'
 import { SendMail } from './type'
 
 // Unfortunately there isn't declaration file for this library
@@ -12,17 +11,7 @@ const sendMail = async (mailerOptions: SendMail) => {
 
   const transporter = nodemailer.createTransport(mailer)
 
-  const options = {
-    viewEngine: {
-      partialsDir: `${appRoot.resolve('/src/views/partials')}`,
-      layoutsDir: `${appRoot.resolve('/src/views/layouts')}`,
-      extname: '.hbs',
-    },
-    extName: '.hbs',
-    viewPath: 'src/views',
-  }
-
-  transporter.use('compile', hbs(options))
+  transporter.use('compile', hbs(handleBarsConfig))
 
   const mailInfo = {
     from: fromEmail,

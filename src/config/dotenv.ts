@@ -1,3 +1,5 @@
+import appRoot from 'app-root-path'
+
 // Process
 const env = process.env.NODE_ENV || 'development'
 const isDevelopment = (process.env.NODE_ENV || 'development') === 'development'
@@ -20,6 +22,17 @@ const mailer = {
 }
 const fromEmail: string = process.env.FROM_EMAIL || ''
 
+// NodeMailerHandlebars
+const handleBarsConfig = {
+  viewEngine: {
+    partialsDir: `${appRoot.resolve('/src/views/partials')}`,
+    layoutsDir: `${appRoot.resolve('/src/views/layouts')}`,
+    extname: '.hbs',
+  },
+  extName: '.hbs',
+  viewPath: 'src/views',
+}
+
 export {
   env,
   isDevelopment,
@@ -30,4 +43,5 @@ export {
   dbName,
   mailer,
   fromEmail,
+  handleBarsConfig,
 }
