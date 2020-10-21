@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { Action, Route } from './router.d'
+import { Action, Route } from './types'
 
 const method = (action: Action): keyof express.Application => {
   let method
