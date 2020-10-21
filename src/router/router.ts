@@ -26,6 +26,10 @@ const routes: Array<Route> = [
     name: 'users',
     only: [Action.CREATE],
   },
+  {
+    name: 'email',
+    only: [Action.LIST],
+  },
 ]
 
 const router = {
