@@ -43,6 +43,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
+    "nodemailer": "^6.4.14",
     "type-graphql": "^1.1.0",
     "typeorm": "^0.2.28"
   },
@@ -53,6 +54,9 @@
     "@types/express": "^4.17.8",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.5",
+    "@types/nodemailer": "^6.4.0",
+    "@types/nodemailer-direct-transport": "^1.0.31",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.0",
