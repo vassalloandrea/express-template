@@ -1,15 +1,16 @@
 import nodemailer from 'nodemailer'
 import appRoot from 'app-root-path'
 import { fromEmail, mailer } from '../../config/dotenv'
+import { SendMail } from './type'
 
-// Unfortunately there isn't declaration file for these libraries
+// Unfortunately there isn't declaration file for this library
 // However we can create one ourselves
 const hbs = require('nodemailer-express-handlebars')
 
-const sendMail = async () => {
-  const transporter = nodemailer.createTransport(mailer)
+const sendMail = async (mailerOptions: SendMail) => {
+  const { context, to, template, subject, attachments } = mailerOptions
 
-  console.log(`${appRoot.resolve('/src/views/partials')}`)
+  const transporter = nodemailer.createTransport(mailer)
 
   const options = {
     viewEngine: {
@@ -25,12 +26,11 @@ const sendMail = async () => {
 
   const mailInfo = {
     from: fromEmail,
-    to: 'testemail555@example.com',
-    subject: 'Test email',
-    template: 'test',
-    context: {
-      name: 'Test user 1234',
-    },
+    to,
+    subject,
+    template,
+    context,
+    attachments,
   }
 
   await transporter.sendMail(mailInfo)
