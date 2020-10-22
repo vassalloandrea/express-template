@@ -1,9 +1,7 @@
-# ExpressJS API template
+# ExpressJS GraphQL API template
 
-This is the template that I usually use to create a new ExpressJS API project.
-Feel free to contribute opening issue and/or making PRs :heart:
-
-I added both the GraphQL and REST paradigms.
+This is the template that I usually use to create a new ExpressJS GraphQL API project.
+Feel free to contribute opening issue and/or making PRs ❤️
 
 ## Main technologies
 
@@ -18,12 +16,11 @@ I added both the GraphQL and REST paradigms.
 
 Make sure you have [Node.js](http://nodejs.org/)
 
-```sh
+sh
 git clone git@github.com:vassalloandrea/express-template.git
 cd express-template
 npm install
 npm run dev
-```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
@@ -33,14 +30,11 @@ You can also set an ENV variables called PORT to change it during the startup.
 
 This project uses Jest to run specs.
 
-```sh
+sh
 npm run jest
-```
 
 ## Run linter
 
 This project uses ESlint and Prettier to check code style.
 
-```
 npm run eslint
-```
