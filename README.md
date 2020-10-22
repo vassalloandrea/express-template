@@ -1,15 +1,12 @@
-# ExpressJS API template
+# ExpressJS Rest API template
 
-This is the template that I usually use to create a new ExpressJS API project.
+This is the template that I usually use to create a new ExpressJS REST API project.
 Feel free to contribute opening issue and/or making PRs :heart:
-
-I added both the GraphQL and REST paradigms.
 
 ## Main technologies
 
 - [ExpressJS](https://github.com/expressjs/express)
 - [TypeORM](https://github.com/typeorm/typeorm)
-- [GraphQL](https://github.com/graphql/graphql-js)
 - [Jest](https://github.com/facebook/jest)
 - [ESlint](https://github.com/eslint/eslint)
 - [Prettier](https://github.com/prettier/prettier)
