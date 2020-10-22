@@ -1,7 +1,5 @@
-import dotenv from 'dotenv'
+import apolloConnection from './apolloConnection'
+import databaseConnection from './databaseConnection'
+import loadENVariables from './loadENVariables'
 
-// Configure dotenv
-const dotenvConfiguration = dotenv.config()
-if (dotenvConfiguration.error) {
-  throw dotenvConfiguration.error
-}
+export { apolloConnection, databaseConnection, loadENVariables }

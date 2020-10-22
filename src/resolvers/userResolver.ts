@@ -8,7 +8,7 @@ import { userService } from '../services'
 export class UserResolver {
   @Mutation(() => User)
   async createUser(@Arg('data') data: CreateUserInput) {
-    const user = userService.createUser(data).then((user) => user)
+    const user = await userService.createUser(data)
     return user
   }
 

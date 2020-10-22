@@ -2,7 +2,7 @@
   "name": "express-template",
   "version": "1.0.0",
   "description": "Express application template",
-  "main": "server.js",
+  "main": "server.ts",
   "engines": {
     "node": "12.18.x",
     "npm": "6.14.x"
@@ -65,7 +65,6 @@
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2",
     "supertest": "^5.0.0",
-    "ts-jest": "^26.4.1",
     "typescript": "^4.0.3"
   }
 }
