@@ -6,8 +6,10 @@ import {
   env,
 } from './src/config/dotenv'
 
+import { logger } from './src/lib'
+
 if (dbName === '') {
-  console.error("The database name wasn't provided")
+  logger.error("The database name wasn't provided")
   process.exit(1)
 }
 
