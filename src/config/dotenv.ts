@@ -9,7 +9,7 @@ const isTest = env === 'test'
 
 // Base
 const appUrl: string = process.env.APP_URL || 'localhost'
-const port: number = parseInt(process.env.PORT || '3000', 10)
+const port: number = Number(process.env.PORT || '3000')
 
 // Database
 const dbUsername: string = process.env.DB_USERNAME || ''

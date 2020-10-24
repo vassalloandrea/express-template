@@ -16,10 +16,16 @@ const colors = {
   debug: 'white',
 }
 
+const level = () => {
+  const env = process.env.NODE_ENV || 'development'
+  const isDevelopment = env === 'development'
+  return isDevelopment ? 'debug' : 'warn'
+}
+
 winston.addColors(colors)
 
 const logger = winston.createLogger({
-  level: 'debug',
+  level: level(),
   levels,
   format: winston.format.combine(
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
