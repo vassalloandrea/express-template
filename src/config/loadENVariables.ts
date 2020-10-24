@@ -1,12 +1,14 @@
 import dotenv from 'dotenv'
 
-const loadENVariables = (isDevelopment: Boolean) => {
+import { logger } from '../lib'
+
+const loadENVariables = () => {
   const dotenvConfiguration = dotenv.config()
 
-  if (dotenvConfiguration.error && isDevelopment) {
-    throw dotenvConfiguration.error
+  if (dotenvConfiguration.error) {
+    logger.error(dotenvConfiguration.error)
   } else {
-    console.log('The env variables were loaded!')
+    logger.info('The env variables were loaded!')
   }
 }
 

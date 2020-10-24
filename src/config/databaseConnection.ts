@@ -1,11 +1,13 @@
 import { createConnection, getConnection } from 'typeorm'
 
+import { logger } from '../lib'
+
 const create = async () => {
   try {
     await createConnection()
-    console.log('The database is connected')
+    logger.info('The database is connected')
   } catch (error) {
-    console.error(error)
+    logger.error(error)
   }
 }
 
@@ -22,7 +24,7 @@ const clear = async () => {
     }),
   )
 
-  console.log('The database is wiped')
+  logger.info('The database is wiped')
 }
 
 const close = async () => await getConnection().close()
