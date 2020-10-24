@@ -29,7 +29,7 @@ jobs:
             ~/cache
             !~/cache/exclude
             **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}-v1
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
@@ -48,17 +48,33 @@ jobs:
           node-version: '12'
           check-latest: true
 
-      - name: Restore cache
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.3.0
+        with:
+          mongodb-version: '4.4'
+
+      - name: Save cache
         uses: actions/cache@v2
         with:
           path: |
             ~/cache
             !~/cache/exclude
             **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}-v1
 
       - name: Run unit tests
-        run: npm run jest -- --passWithNoTests
+        env:
+          DB_NAME: ci
+        run: npm run jest
+
+      - name: Push coverage
+        run: npm run coverage --token=${{ secrets.CODECOV_TOKEN }}
+
+      - name: Store coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage
 
   eslint:
     needs: deps
@@ -80,7 +96,7 @@ jobs:
             ~/cache
             !~/cache/exclude
             **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}-v1
 
       - name: Run eslint
         run: npm run eslint

@@ -1,5 +1,7 @@
 # ExpressJS GraphQL API template
 
+[![codecov](https://codecov.io/gh/vassalloandrea/express-template/branch/master/graph/badge.svg?token=F38EP8I67R)](undefined)
+
 This is the template that I usually use to create a new ExpressJS GraphQL API project.
 Feel free to contribute opening issue and/or making PRs ❤️
 
