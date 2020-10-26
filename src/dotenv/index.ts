@@ -1,6 +1,4 @@
-import { loadENVariables } from '.'
-
-loadENVariables()
+require('dotenv').config()
 
 // Node
 const env = process.env.NODE_ENV || 'development'
