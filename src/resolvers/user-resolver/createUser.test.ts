@@ -9,6 +9,7 @@ const query = (data: CreateUserInput) => `
     createUser (
       data: {
         name: "${data.name}"
+        email: "${data.email}"
       }
     ) {
       name
@@ -30,7 +31,7 @@ describe('Create user', () => {
   })
 
   it('creates the user if the data are correct', (done) => {
-    const data: CreateUserInput = { name: 'Foo Bar' }
+    const data: CreateUserInput = { name: 'Foo Bar', email: 'foo@bar.com' }
 
     request(app)
       .post('/graphql')
@@ -46,7 +47,7 @@ describe('Create user', () => {
   })
 
   it('returns the errors when the data are incorrect', (done) => {
-    const data: CreateUserInput = { name: '' }
+    const data: CreateUserInput = { name: '', email: '' }
 
     request(app)
       .post('/graphql')

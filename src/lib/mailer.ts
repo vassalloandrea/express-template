@@ -1,6 +1,7 @@
 import { transporter } from '../config'
 import { mailerFromEmail } from '../dotenv'
 import { MailArgs } from '../types'
+import logger from './logger'
 
 const sendMail = (config: MailArgs) => {
   const mailInfo = {
@@ -8,7 +9,7 @@ const sendMail = (config: MailArgs) => {
     ...config,
   }
 
-  transporter.sendMail(mailInfo)
+  transporter.sendMail(mailInfo, (error) => error && logger.info(error))
 }
 
 const mailer = {

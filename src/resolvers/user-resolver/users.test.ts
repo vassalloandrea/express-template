@@ -26,8 +26,8 @@ describe('User list', () => {
   })
 
   it('returns all the users if exist', async (done) => {
-    await userService.createUser({ name: 'Foo Bar' })
-    await userService.createUser({ name: 'Bar Foo' })
+    await userService.createUser({ name: 'Foo Bar', email: 'foo@bar.com' })
+    await userService.createUser({ name: 'Bar Foo', email: 'bar@foo.com' })
 
     request(app)
       .post('/graphql')

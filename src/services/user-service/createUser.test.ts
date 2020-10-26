@@ -20,6 +20,7 @@ describe('Create user service', () => {
   it('creates the user if the passed data are correct', async (done) => {
     const data: CreateUserInput = {
       name: 'Foo Bar',
+      email: 'foo@bar.com',
     }
 
     const user = await userService.createUser(data)

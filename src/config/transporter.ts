@@ -20,8 +20,8 @@ const mailer = {
 
 const handleBarsConfig = {
   viewEngine: {
-    partialsDir: '../views/partials',
-    layoutsDir: '../views/layouts',
+    partialsDir: 'src/views/partials',
+    layoutsDir: 'src/views/layouts',
     extname: '.hbs',
   },
   extName: '.hbs',
