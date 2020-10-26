@@ -1,6 +1,4 @@
-import { loadENVariables } from '.'
-
-loadENVariables()
+require('dotenv').config()
 
 // Node
 const env = process.env.NODE_ENV || 'development'
@@ -16,6 +14,13 @@ const dbUsername: string = process.env.DB_USERNAME || ''
 const dbPassword: string = process.env.DB_PASSWORD || ''
 const dbName: string = process.env.DB_NAME || ''
 
+// Mailer
+const mailerHost: string = process.env.SMTP_HOST || ''
+const mailerPort: number = Number(process.env.SMTP_PORT || '2525')
+const mailerUsername: string = process.env.SMTP_USER || ''
+const mailerPassword: string = process.env.SMTP_PASSWORD || ''
+const mailerFromEmail: string = process.env.FROM_EMAIL || ''
+
 export {
   env,
   isDevelopment,
@@ -25,4 +30,9 @@ export {
   dbUsername,
   dbPassword,
   dbName,
+  mailerHost,
+  mailerPort,
+  mailerUsername,
+  mailerPassword,
+  mailerFromEmail,
 }

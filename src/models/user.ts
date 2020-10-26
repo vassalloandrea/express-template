@@ -9,4 +9,8 @@ export class User extends AppBaseEntity {
   @Field(() => String)
   @Column()
   name: string
+
+  @Field(() => String)
+  @Column()
+  email: string
 }
