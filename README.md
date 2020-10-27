@@ -18,11 +18,12 @@ Feel free to contribute opening issue and/or making PRs ❤️
 
 Make sure you have [Node.js](http://nodejs.org/)
 
-sh
+```
 git clone git@github.com:vassalloandrea/express-template.git
 cd express-template
 npm install
 npm run dev
+```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
