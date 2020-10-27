@@ -2,12 +2,7 @@ import nodemailer from 'nodemailer'
 
 const hbs = require('nodemailer-express-handlebars')
 
-import {
-  mailerHost,
-  mailerPassword,
-  mailerPort,
-  mailerUsername,
-} from '../dotenv'
+import { mailerHost, mailerPassword, mailerPort, mailerUsername } from '../envs'
 
 const mailer = {
   host: mailerHost,

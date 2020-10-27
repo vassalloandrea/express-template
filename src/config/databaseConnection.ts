@@ -5,7 +5,7 @@ import {
   getConnectionOptions,
 } from 'typeorm'
 
-import { dbUsername, dbPassword, dbName, isDevelopment, env } from '../dotenv'
+import { dbUsername, dbPassword, dbName, isDevelopment, env } from '../envs'
 import { logger } from '../lib'
 
 const options = async (): Promise<ConnectionOptions> => {

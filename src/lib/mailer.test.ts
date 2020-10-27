@@ -1,6 +1,6 @@
 import { mailer } from '.'
 import { nodeMailerTransporter } from '../config'
-import { mailerFromEmail } from '../dotenv'
+import { mailerFromEmail } from '../envs'
 
 jest.mock('nodemailer', () => ({
   createTransport: jest.fn().mockReturnValue({

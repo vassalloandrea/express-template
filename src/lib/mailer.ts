@@ -1,5 +1,5 @@
 import { nodeMailerTransporter } from '../config'
-import { mailerFromEmail } from '../dotenv'
+import { mailerFromEmail } from '../envs'
 import { MailArgs } from '../types'
 import logger from './logger'
 

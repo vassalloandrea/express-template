@@ -2,7 +2,7 @@ import { IncomingMessage } from 'http'
 import morgan, { StreamOptions } from 'morgan'
 
 import { logger } from '../lib'
-import { isDevelopment } from '../dotenv'
+import { isDevelopment } from '../envs'
 
 interface Request extends IncomingMessage {
   body: {
