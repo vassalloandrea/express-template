@@ -9,7 +9,7 @@ const sendMail = (config: MailArgs) => {
     ...config,
   }
 
-  transporter.sendMail(mailInfo, (error) => error && logger.info(error))
+  transporter.sendMail(mailInfo, (error, _info) => error && logger.info(error))
 }
 
 const mailer = {
