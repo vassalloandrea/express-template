@@ -1,14 +1,8 @@
-import { IncomingMessage } from 'http'
 import morgan, { StreamOptions } from 'morgan'
 
 import { logger } from '../lib'
 import { isDevelopment } from '../envs'
-
-interface Request extends IncomingMessage {
-  body: {
-    query: String
-  }
-}
+import { Request } from '../types'
 
 const loggerStream: StreamOptions = {
   write: (message) =>
@@ -16,9 +10,7 @@ const loggerStream: StreamOptions = {
 }
 
 const registerGraphQLToken = () => {
-  morgan.token('graphql-query', (req: Request) => {
-    return `GraphQL ${req.body.query}`
-  })
+  morgan.token('graphql-query', (req: Request) => `GraphQL ${req.body.query}`)
 }
 
 registerGraphQLToken()
