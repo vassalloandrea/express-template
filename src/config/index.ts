@@ -1,6 +1,11 @@
 import apolloConnection from './apolloConnection'
 import databaseConnection from './databaseConnection'
 import morganMiddleware from './morganMiddleware'
-import transporter from './transporter'
+import nodeMailerTransporter from './nodeMailerTransporter'
 
-export { apolloConnection, databaseConnection, morganMiddleware, transporter }
+export {
+  apolloConnection,
+  databaseConnection,
+  morganMiddleware,
+  nodeMailerTransporter,
+}

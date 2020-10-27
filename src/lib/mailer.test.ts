@@ -1,5 +1,5 @@
 import { mailer } from '.'
-import { transporter } from '../config'
+import { nodeMailerTransporter } from '../config'
 import { mailerFromEmail } from '../dotenv'
 
 jest.mock('nodemailer', () => ({
@@ -12,7 +12,7 @@ jest.mock('nodemailer', () => ({
 describe('Mailer', () => {
   describe('sendMail', () => {
     it('calls the transporter sendMail method', () => {
-      const createSendMailMock = jest.spyOn(transporter, 'sendMail')
+      const createSendMailMock = jest.spyOn(nodeMailerTransporter, 'sendMail')
       const options = {
         to: 'foo@bar.com',
         template: 'test',

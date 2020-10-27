@@ -28,7 +28,7 @@ const handleBarsConfig = {
   viewPath: 'src/views',
 }
 
-const transporter = nodemailer.createTransport(mailer)
-transporter.use('compile', hbs(handleBarsConfig))
+const nodeMailerTransporter = nodemailer.createTransport(mailer)
+nodeMailerTransporter.use('compile', hbs(handleBarsConfig))
 
-export default transporter
+export default nodeMailerTransporter

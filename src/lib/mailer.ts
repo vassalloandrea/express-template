@@ -1,4 +1,4 @@
-import { transporter } from '../config'
+import { nodeMailerTransporter } from '../config'
 import { mailerFromEmail } from '../dotenv'
 import { MailArgs } from '../types'
 import logger from './logger'
@@ -9,7 +9,10 @@ const sendMail = (config: MailArgs) => {
     ...config,
   }
 
-  transporter.sendMail(mailInfo, (error, _info) => error && logger.info(error))
+  nodeMailerTransporter.sendMail(
+    mailInfo,
+    (error, _info) => error && logger.info(error),
+  )
 }
 
 const mailer = {
