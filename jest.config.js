@@ -1,5 +1,6 @@
 module.exports = {
   roots: ['<rootDir>/src'],
   testMatch: ['**/*.test.ts'],
-  coveragePathIgnorePatterns: ['ormconfig.ts', 'src/config'],
+  collectCoverage: true,
+  coveragePathIgnorePatterns: ['ormconfig.ts', 'src/envs.ts', 'src/config'],
 }

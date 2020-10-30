@@ -2,12 +2,7 @@ import nodemailer from 'nodemailer'
 
 const hbs = require('nodemailer-express-handlebars')
 
-import {
-  mailerHost,
-  mailerPassword,
-  mailerPort,
-  mailerUsername,
-} from '../dotenv'
+import { mailerHost, mailerPassword, mailerPort, mailerUsername } from '../envs'
 
 const mailer = {
   host: mailerHost,
@@ -28,7 +23,7 @@ const handleBarsConfig = {
   viewPath: 'src/views',
 }
 
-const transporter = nodemailer.createTransport(mailer)
-transporter.use('compile', hbs(handleBarsConfig))
+const nodeMailerTransporter = nodemailer.createTransport(mailer)
+nodeMailerTransporter.use('compile', hbs(handleBarsConfig))
 
-export default transporter
+export default nodeMailerTransporter
