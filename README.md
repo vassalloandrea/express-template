@@ -33,11 +33,15 @@ You can also set an ENV variables called PORT to change it during the startup.
 
 This project uses Jest to run specs.
 
+```
 sh
 npm run jest
+```
 
 ## Run linter
 
 This project uses ESlint and Prettier to check code style.
 
+```
 npm run eslint
+```
