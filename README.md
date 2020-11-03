@@ -5,6 +5,8 @@
 This is the template that I usually use to create a new ExpressJS GraphQL API project.
 Feel free to contribute opening issue and/or making PRs ❤️
 
+If you need the REST Api middleware check the branch `rest-apis`
+
 ## Main technologies
 
 - [ExpressJS](https://github.com/expressjs/express)
