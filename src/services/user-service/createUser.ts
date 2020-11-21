@@ -6,7 +6,7 @@ const CreateUser = async (data: CreateUserInput) => {
   const user = User.create(data)
   await user.save()
 
-  mailer.sendMail({
+  await mailer.sendMail({
     subject: 'Welcome to express template',
     to: user.email,
     template: 'auth/welcome',

@@ -1,18 +1,19 @@
 import { nodeMailerTransporter } from '../config'
 import { mailerFromEmail } from '../envs'
 import { MailArgs } from '../types'
-import logger from './logger'
+import { logger } from '.'
 
-const sendMail = (config: MailArgs) => {
+const sendMail = async (config: MailArgs) => {
   const mailInfo = {
     from: mailerFromEmail,
     ...config,
   }
 
-  nodeMailerTransporter.sendMail(
-    mailInfo,
-    (error, _info) => error && logger.info(error),
-  )
+  try {
+    await nodeMailerTransporter.sendMail(mailInfo)
+  } catch (error) {
+    logger.error(error)
+  }
 }
 
 const mailer = {

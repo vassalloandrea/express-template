@@ -1,32 +1,33 @@
-import { mailer } from '.'
+import mailer from './mailer'
+import { logger } from '.'
 import { nodeMailerTransporter } from '../config'
 import { mailerFromEmail } from '../envs'
 
-jest.mock('nodemailer', () => ({
-  createTransport: jest.fn().mockReturnValue({
-    use: jest.fn(),
-    sendMail: jest.fn(),
-  }),
-}))
-
 describe('Mailer', () => {
-  describe('sendMail', () => {
-    it('calls the transporter sendMail method', () => {
-      const createSendMailMock = jest.spyOn(nodeMailerTransporter, 'sendMail')
-      const options = {
-        to: 'foo@bar.com',
-        template: 'test',
-        subject: 'Test',
-      }
-      mailer.sendMail(options)
+  const options = {
+    to: 'foo@bar.com',
+    template: 'test',
+    subject: 'Test',
+  }
 
-      expect(createSendMailMock).toHaveBeenCalledWith(
-        {
-          from: mailerFromEmail,
-          ...options,
-        },
-        expect.any(Function),
-      )
+  describe('sendMail', () => {
+    it('calls the transporter sendMail method', async (done) => {
+      const createSendMailMock = jest.spyOn(nodeMailerTransporter, 'sendMail')
+      await mailer.sendMail(options)
+
+      expect(createSendMailMock).toHaveBeenCalledWith({
+        from: mailerFromEmail,
+        ...options,
+      })
+      done()
+    })
+
+    it('logs the error if the sendMail fails', async (done) => {
+      const createLoggerMock = jest.spyOn(logger, 'error')
+      await mailer.sendMail(options)
+
+      expect(createLoggerMock).toHaveBeenCalled()
+      done()
     })
   })
 })
