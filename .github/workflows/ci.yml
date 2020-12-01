@@ -69,7 +69,7 @@ jobs:
         run: npm run jest
 
       - name: Push coverage
-        run: npm run coverage --token=${{ secrets.CODECOV_TOKEN }}
+        run: npm run coverage -- --token=${{ secrets.CODECOV_TOKEN }}
 
       - name: Store coverage
         uses: actions/upload-artifact@v2
