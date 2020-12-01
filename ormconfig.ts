@@ -1,6 +1,6 @@
 module.exports = {
   type: 'mongodb',
-  synchronize: false,
+  synchronize: true,
   useUnifiedTopology: true,
   entities: ['./src/models/**/*.ts'],
 }
