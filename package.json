@@ -39,7 +39,7 @@
     "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@types/morgan": "^1.9.2",
-    "apollo-server": "^2.19.1",
+    "apollo-server": "^2.19.2",
     "body-parser": "^1.19.0",
     "class-validator": "^0.12.2",
     "dotenv": "^8.2.0",
