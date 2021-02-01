@@ -65,7 +65,7 @@
     "@typescript-eslint/parser": "^4.14.1",
     "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "codecov": "^3.8.0",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
