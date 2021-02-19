@@ -37,7 +37,7 @@
     "@babel/cli": "^7.12.16",
     "@babel/core": "^7.12.17",
     "@babel/node": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-env": "^7.12.17",
     "@types/morgan": "^1.9.2",
     "apollo-server": "^2.20.0",
     "body-parser": "^1.19.0",
