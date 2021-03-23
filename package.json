@@ -62,7 +62,7 @@
     "@types/nodemailer": "^6.4.1",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "@typescript-eslint/parser": "^4.18.0",
+    "@typescript-eslint/parser": "^4.19.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "codecov": "^3.8.0",
     "eslint": "^7.22.0",
